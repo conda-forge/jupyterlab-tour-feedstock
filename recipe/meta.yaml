@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-tour" %}
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a1fb867d5278f27dc43ffd8a976788e5a6fff769c7f482aed5f6c9aace9b47a1
+  sha256: 78b423e3c262dd5d812c83c840f09a35f28d54319bae10a8d42bf7a86bfc6aa0
 
 build:
   noarch: python
   number: 0
-  script: '{{ PYTHON }} -m pip install . --install-option="--skip-npm" -vv'
+  script: {{ PYTHON }} -m pip install . --install-option="--skip-npm" -vv
 
 requirements:
   host:
@@ -33,7 +33,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'A JupyterLab UI tour built on jupyterlab-tutorial and react-joyride.'
+  summary: A JupyterLab UI tour built on jupyterlab-tutorial and react-joyride.
 
 extra:
   recipe-maintainers:
