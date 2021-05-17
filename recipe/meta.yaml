@@ -25,7 +25,10 @@ requirements:
     - jupyterlab >=3.0.0
 
 test:
+  requires:
+    - pip
   commands:
+    - pip check
     - jupyter labextension list 2>&1 | grep -ie "jupyterlab-tour.*OK.*(python, jupyterlab-tour)"
 
 about:
