@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-tour" %}
-{% set version = "3.1.1" %}
+{% set version = "3.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f1f568890f0027d99531a54e60363f83c94eae6b25121b44c996ae2bbf119d6a
+  sha256: bc8fb0660aff3e0176647a0eb13b37b07e991199ff1d9c76496ad8189ebb1c39
 
 build:
   noarch: python
