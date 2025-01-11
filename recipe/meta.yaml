@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 51d860f872775ce7d85dbfd215fbab1d2c79f5c0c1a902a1d46e4bb642090cbd
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,14 +21,15 @@ requirements:
     - hatchling >=1.5.0
     - jupyterlab =4
     - pip
-    - python >=3.8,<4.0
+    - python {{ python_min }}
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
 
 test:
   requires:
     - pip
     - jupyterlab
+    - python {{ python_min }}
   commands:
     - pip check
     - jupyter labextension list 2>&1 | grep -ie "jupyterlab-tour.*OK.*(python, jupyterlab-tour)"
