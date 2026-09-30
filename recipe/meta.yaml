@@ -1,17 +1,17 @@
 {% set name = "jupyterlab-tour" %}
-{% set version = "4.0.1" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 51d860f872775ce7d85dbfd215fbab1d2c79f5c0c1a902a1d46e4bb642090cbd
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: de79689fffc15c3b4f4771927a8effffdfc68cd8698184ac1cd3417d50f24a41
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
